@@ -146,9 +146,8 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 
 ```text
 
-
 ```	
-
+	
 
 #### Types d'actions:
 | Type 	|  Chainable(1) | Description 	|
@@ -159,17 +158,14 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 | **spinner**   | Oui |
 | **editText**   | Oui |
 
-##### Chainable: La propriété "type" peut avoir les types chainables séparés par un caractère "&" plusieurs fois dans sa valeur, par exemple:
+##### (1): La propriété "type" peut avoir les types chainables séparés par un caractère "&" plusieurs fois dans sa valeur, par exemple:
 ```text
 "type" : "slider:<def du slider>&spinner:<def du spinner>&editText<def de l'editTExt>&spinner:<def du spinner>&slider:<def du slider>"
 ```		
 
-
 ```text
 
-
 ```	
-
 
 #### Mots-clés pour le paramètre client:
 | client 	|  Description 	|
@@ -179,7 +175,6 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 
 
 ```text
-
 
 ```	 
 
