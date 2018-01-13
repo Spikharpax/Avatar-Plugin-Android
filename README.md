@@ -39,7 +39,7 @@ A l'installation, un répertoire de liaison `android/clients/Android` existe pou
 	},
 ```
 
-#### Configuration sur le smartphone
+### Configuration sur le smartphone
 Vous devez définir quelques paramètres sur le smartphone, référez-vous à l'aide en ligne dans la page d'À propos de l'application.
 
 
@@ -74,7 +74,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 },
 ```		
 	
-**Chaque menu est défini sous la forme suivante:**
+### Le menu
 ```xml
 "navigation_cmds" : { 
 	"Nom de Menu 1" : { 
@@ -103,9 +103,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 
 
 
-#### Actions de menu
-
-**Chaque action est définie sous la forme suivante:**
+### Les actions de menu
 ```xml
 "navigation_cmds" : { 
 	"Nom de Menu 1" : { 
@@ -146,6 +144,10 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 | **type**  | Non  | Voir le tableau des types d'actions ci-dessous.|
 | **icon**  | Oui  | |
 
+```text
+
+
+```	
 
 
 #### Types d'actions:
@@ -158,8 +160,15 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 | **editText**   | Oui |
 
 ##### Chainable: La propriété "type" peut avoir les types chainables séparés par un caractère "&" plusieurs fois dans sa valeur, par exemple:
-- "type" : "slider:<def du slider>**&**spinner:<def du spinner>**&**editText<def de l'editTExt>**&**spinner:<def du spinner>**&**slider:<def du slider>"
+```text
+"type" : "slider:<def du slider>&spinner:<def du spinner>&editText<def de l'editTExt>&spinner:<def du spinner>&slider:<def du slider>"
+```		
 
+
+```text
+
+
+```	
 
 
 #### Mots-clés pour le paramètre client:
@@ -168,6 +177,11 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 | **currentRoom**    | Permet de définir l'exécution de l'action pour la pièce courante. La pièce courante est définie soit par la propriété `default.client` du fichier de propriétés d'Avatar, soit par des capteurs de présences qui modifient automatiquement la variable `Avatar.currentRoom`, soit par tout autre moyen, comme par exemple, un menu de l'application qui modifie cette variable, une règle vocale "Je suis dans le Salon", etc... Ainsi, une commande unique peut commander le même équipement dans toutes les pièces. Par exemple, une action "Allume la lumière" sera donc exécutée dans la pièce courante.|
 | **Server**    | Permet de définir l'exécution de l'action sur le serveur Avatar.|
 
+
+```text
+
+
+```	 
 
 ## Versions
 
