@@ -145,7 +145,6 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 | **icon**  | Oui  | |
 
 ```text
-
 ```	
 	
 
@@ -164,7 +163,6 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 ```		
 
 ```text
-
 ```	
 
 #### Mots-clés pour le paramètre client:
@@ -175,7 +173,6 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 
 
 ```text
-
 ```	 
 
 ## Versions
