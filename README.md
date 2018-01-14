@@ -5,6 +5,8 @@ Ce plugin est un client Android pour le framework [Avatar](https://github.com/Sp
 
 Un client Android pour Avatar est bi-directionnel. Il envoie vos règles à Avatar et reçoit les messages de confirmation sur son haut parleur. Il peut aussi recevoir des demandes vocales directes provenants de plugins et attendre une réponse. Il gère même les dialogues de questions/réponses vous permettant ainsi d'effectuer de véritables conversations avec Avatar depuis votre smartphone exactement de la même façon qu'un client fixe sur un PC Windows.
 
+![GitHub Logo](/images/main.png)
+
 
 ## Installation
 - Installez l'application Avatar depuis l'APP Store sur votre smartphone
@@ -97,8 +99,8 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 |     :---:     | :---:   | --- 			|
 | **Nom de Menu**    | Oui  | Le menu regroupant les actions dans le menu déroulant de l'application et apparaissant aussi en haut de la page de l'action.|
 | **description**    | Non  | Une description apparaissant en dessous du menu dans la page de l'action.|
-| **plugin**  | Non  | Défini un plugin global pour toutes les actions du menu. Si aucun plugin n'est spécifié pour l'action du menu, alors ce plugin est utilisé. **Attention**, si ce paramètre n'est pas défini, toutes les actions du menu doivent avoir un paramètre `plugin`.|
-| **client**  | Non  | Défini un client global pour l'exécution de toutes les actions du menu. Si aucun client n'est spécifié pour l'action alors ce client est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom du client Android défini dans les paramètres de l'application est utilisé. Voir le tableau `Mots-clés pour le paramètre client` pour les mot-clés possibles. **Rappel:** Avatar est une application clients/serveur, par conséquent, toutes les actions sont associées à un client.|
+| **plugin**  | Non  | Défini un plugin global pour toutes les actions du menu. Si aucun plugin n'est spécifié pour l'action du menu, alors ce plugin est utilisé.<BR>**Attention**, si ce paramètre n'est pas défini, toutes les actions du menu doivent avoir un paramètre `plugin`.|
+| **client**  | Non  | Défini un client global pour l'exécution de toutes les actions du menu. Si aucun client n'est spécifié pour l'action alors ce client est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom du client Android défini dans les paramètres de l'application est utilisé. Voir le tableau `Mots-clés pour le paramètre client` pour les mot-clés possibles.<BR><BR>**Rappel:** Avatar est une application clients/serveur, par conséquent, toutes les actions sont associées à un client.|
 | **actions**  | Oui  | Défini les actions à exécuter pour ce menu. voir le tableau `Actions de menu` suivant pour la description d'une action.|
 
 
@@ -171,6 +173,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 ```	
 
 #### Mots-clés pour le paramètre client:
+En plus de spécifier un nom de client Avatar, comme par exemple "Salon", il est possible de définir des mots-clés:
 | client 	|  Description 	|
 |     :---:     | --- 			|
 | **currentRoom**    | Comme pour un client fixe sur PC Windows, "currentRoom" permet de définir l'exécution de l'action pour la pièce courante. La pièce courante est définie soit par la propriété `default.client` du fichier de propriétés d'Avatar, soit par des capteurs de présences qui modifient automatiquement la variable `Avatar.currentRoom`, soit par tout autre moyen, comme par exemple, un menu de l'application qui modifie cette variable, une règle vocale "Je suis dans le Salon", etc... Ainsi, une commande unique peut commander le même équipement dans toutes les pièces. Par exemple, une action "Allume la lumière" sera donc exécutée dans la pièce courante, indépendamment de l'endroit où vous vous trouvez.|
