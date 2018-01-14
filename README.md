@@ -79,7 +79,7 @@ Il est possible de définir des actions "textes" dans le navigateur de l'applica
 ```		
 	
 ### Les menus
-Les menu de navigateur regroupent les actions selon votre configuration. 
+Les menus de navigateur regroupent les actions selon votre configuration, par exemple par périphériques (sons, box tv) ou encore par pièces (Avatar client). 
 
 ```xml
 "navigation_cmds" : { 
@@ -125,8 +125,8 @@ Les menu de navigateur regroupent les actions selon votre configuration.
 				"type" : "Type d'action à effectuer",
 				"icon" : {
 					"name" : "nom de l'icone",
-					"deftype" : "type d'icone",
-					"defpackage" : "package de définition de l'icone"
+					"deftype" : "drawable",
+					"defpackage" : "android"
 				}
 			},
 			"nom de l'action 2" : {
