@@ -142,7 +142,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 | **plugin**  | Non  | Défini un plugin spécifique pour l'action. Si aucun plugin n'est spécifié alors le plugin global (au niveau du menu) est utilisé.|
 | **command**  | Non  | Si necessaire, la commande à exécuter dans le plugin pour l'action.|
 | **type**  | Non  | Voir le tableau des types d'actions ci-dessous.|
-| **icon**  | Oui  | |
+| **icon**  | Non  | |
 
 ```text
 ```	
@@ -153,7 +153,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 |     :---:   | :---:    | --- 			|
 | **normal** | Non | Le paramètre par défaut si cette propriété n'est pas définie. Ce type n'affiche pas de page d'activité pour l'action. Après avoir sélectionné l'action dans le menu déroulant de l'application, celle-ci est exécutée directement une seule fois.|
 | **activity** | Non | Affiche une page d'activité pour l'action. Un bouton "EXECUTER" permet d'exécuter l'action plusieurs fois.|
-| **slider**   | Oui | |
+| **slider**   | Oui | ![GitHub Logo](/images/slider.png) <BR>|
 | **spinner**   | Oui |
 | **editText**   | Oui |
 
@@ -168,7 +168,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 #### Mots-clés pour le paramètre client:
 | client 	|  Description 	|
 |     :---:     | --- 			|
-| **currentRoom**    | Permet de définir l'exécution de l'action pour la pièce courante. La pièce courante est définie soit par la propriété `default.client` du fichier de propriétés d'Avatar, soit par des capteurs de présences qui modifient automatiquement la variable `Avatar.currentRoom`, soit par tout autre moyen, comme par exemple, un menu de l'application qui modifie cette variable, une règle vocale "Je suis dans le Salon", etc... Ainsi, une commande unique peut commander le même équipement dans toutes les pièces. Par exemple, une action "Allume la lumière" sera donc exécutée dans la pièce courante.|
+| **currentRoom**    | Comme pour un client fixe sur PC Windows, "currentRoom" permet de définir l'exécution de l'action pour la pièce courante. La pièce courante est définie soit par la propriété `default.client` du fichier de propriétés d'Avatar, soit par des capteurs de présences qui modifient automatiquement la variable `Avatar.currentRoom`, soit par tout autre moyen, comme par exemple, un menu de l'application qui modifie cette variable, une règle vocale "Je suis dans le Salon", etc... Ainsi, une commande unique peut commander le même équipement dans toutes les pièces. Par exemple, une action "Allume la lumière" sera donc exécutée dans la pièce courante, indépendamment de l'endroit où vous vous trouvez.|
 | **Server**    | Permet de définir l'exécution de l'action sur le serveur Avatar.|
 
 
