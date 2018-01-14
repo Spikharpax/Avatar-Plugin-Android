@@ -140,7 +140,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 | **description**    | Non  | Une description apparaissant en dessous de l'action dans la page de l'action.|
 | **client**  | Non  | Défini un client spécifique pour l'exécution de l'action. Si aucun client n'est spécifié pour l'action, alors le client global (au niveau du menu) est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom de ce client Android est utilisé. Voir le tableau `Mots-clés pour le paramètre client` pour les mot-clés possibles. **Rappel:** Avatar est une application clients/serveur, par conséquent, toutes les actions sont associées à un client.|
 | **plugin**  | Non  | Défini un plugin spécifique pour l'action. Si aucun plugin n'est spécifié alors le plugin global (au niveau du menu) est utilisé.|
-| **command**  | Non  | Si necessaire, la commande à exécuter dans le plugin pour l'action.|
+| **command**  | Non  | Si nécessaire, les paramètres de commande du plugin pour l'action.|
 | **type**  | Non  | Voir le tableau des types d'actions ci-dessous.|
 | **icon**  | Non  | |
 
@@ -153,16 +153,16 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 |     :---:   | :---:    | --- 			|
 | **normal** | Non | Le paramètre par défaut si cette propriété n'est pas définie. Ce type n'affiche pas de page d'activité pour l'action. Après avoir sélectionné l'action dans le menu déroulant de l'application, celle-ci est exécutée directement une seule fois.|
 | **activity** | Non | Affiche une page d'activité pour l'action. Un bouton "EXECUTER" permet d'exécuter l'action plusieurs fois.|
-| **slider**   | Oui | ![GitHub Logo](/images/slider.png) <BR> Affiche un slider pour la sélection d'une valeur numérique. <BR> <BR> **Définition:** <BR> slider:**<i>param</i>**@**<i>pos</i>**@**<i>size</i>**@**<i>max value</i>**@**<i>texte</i>** <BR> <BR> **param:** Le paramètre dans la commande (défini dans la propriété "command"). <BR>**pos:** L'**ID**entifiant du slider pour l'activité (voir **2**).<BR>**size:** La longueur du slider dans la page. <BR>**max value:** La valeur maximale d'incrémentation. <BR>**texte:** Le texte du slider.|
+| **slider**   | Oui | ![GitHub Logo](/images/slider.png) <BR> Affiche un slider pour la sélection d'une valeur numérique. <BR> <BR> **Définition:** <BR> slider:**<i>param</i>**@**<i>pos</i>**@**<i>size</i>**@**<i>max value</i>**@**<i>texte</i>** <BR> <BR> **param:** Le nom du paramètre pour la commande HTTP (défini dans la propriété "command"). <BR>**pos:** L'**ID**entifiant du slider pour l'activité (voir **2**).<BR>**size:** La longueur du slider dans la page. <BR>**max value:** La valeur maximale d'incrémentation. <BR>**texte:** Le texte du slider.<BR><BR>**Exemple:** Supposons la commande <i>set_speaker>/i> de l'image ci-dessus avec un paramètre "set" qui définie une valeur (valeur par défaut défini à 50) de réglage du volume. Le paramètre <i>command</i> de l'action est défini comme suit:<BR>command=set_speaker&set=50<BR><BR>Le type sera défini comme suit:<BR>"type": "slider:set@1@350@100@Define volume:"|
 | **spinner**   | Oui |
 | **editText**   | Oui |
 
-**(1):** La propriété "type" peut avoir les types chainables séparés par un caractère "&" plusieurs fois dans sa valeur, par exemple:
+**(1):** La propriété "type" peut avoir les types chainables séparés par un caractère **"&"** vous permettant de créer une saisie de plusieurs valeurs pour une action, par exemple:
 ```text
 "type" : "slider:<def du slider>&spinner:<def du spinner>&editText<def de l'editTExt>&spinner:<def du spinner>&slider:<def du slider>"
 ```		
 
-**(2):** L'IDentifiant d'un type chainable est obligatoire pour repérer le widget dans l'activité action. Commence à **1** et s'incrémente pour chaque chainable ajouté dans le type. Par exemple, un 1er slider aura un ID à **1** puis le suivant aura un ID à **2** puis un editText suivant aura un ID à **3**, etc...
+**(2):** L'**ID**entifiant d'un type chainable est obligatoire pour repérer le widget dans l'activité action. Commence à **1** et s'incrémente pour chaque chainable ajouté dans le type. Par exemple, un 1er slider aura un ID à **1** puis le suivant aura un ID à **2** puis un editText suivant aura un ID à **3**, etc..., Exemple:
 ```text
 "type" : "slider:setvol@**1**@350@100@Define volume:&slider:setsize@**2**@350@100@Define size:&editText:room@**3**@300@Define room"
 ```	
