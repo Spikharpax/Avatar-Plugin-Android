@@ -153,7 +153,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 |     :---:   | :---:    | --- 			|
 | **normal** | Non | Le paramètre par défaut si cette propriété n'est pas définie. Ce type n'affiche pas de page d'activité pour l'action. Après avoir sélectionné l'action dans le menu déroulant de l'application, celle-ci est exécutée directement une seule fois.|
 | **activity** | Non | Affiche une page d'activité pour l'action. Un bouton "EXECUTER" permet d'exécuter l'action plusieurs fois.|
-| **slider**   | Oui | ![GitHub Logo](/images/slider.png) <BR> Affiche un slider valeur numérique|
+| **slider**   | Oui | ![GitHub Logo](/images/slider.png) <BR> Affiche un slider pour la sélection d'une valeur numérique. <BR> **Paramètre de définition:** <BR> slider:**<i>cmd</i>**@**<i>pos</i>**@**<i>size</i>**@**<i>max value</i>**@**<i>title</i>**|
 | **spinner**   | Oui |
 | **editText**   | Oui |
 
