@@ -153,7 +153,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 |     :---:   | :---:    | --- 			|
 | **normal** | Non | Le paramètre par défaut si cette propriété n'est pas définie. Ce type n'affiche pas de page d'activité pour l'action. Après avoir sélectionné l'action dans le menu déroulant de l'application, celle-ci est exécutée directement une seule fois.|
 | **activity** | Non | Affiche une page d'activité pour l'action. Un bouton "EXECUTER" permet d'exécuter l'action plusieurs fois.|
-| **slider**   | Oui | ![GitHub Logo](/images/slider.png) <BR> Affiche un slider pour la sélection d'une valeur numérique. <BR> **Paramètre de définition:** <BR> slider:**<i>cmd</i>**@**<i>pos</i>**@**<i>size</i>**@**<i>max value</i>**@**<i>title</i>**|
+| **slider**   | Oui | ![GitHub Logo](/images/slider.png) <BR> Affiche un slider pour la sélection d'une valeur numérique. <BR> <BR> **Définition:** <BR> slider:**<i>param</i>**@**<i>pos</i>**@**<i>size</i>**@**<i>max value</i>**@**<i>title</i>** <BR> <BR> **param:** Le paramètre dans la commande (défini dans la propriété "command"). <BR>**pos:** L'**ID**entifiant du spinner pour l'activité(voir **2**).|
 | **spinner**   | Oui |
 | **editText**   | Oui |
 
@@ -161,6 +161,11 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 ```text
 "type" : "slider:<def du slider>&spinner:<def du spinner>&editText<def de l'editTExt>&spinner:<def du spinner>&slider:<def du slider>"
 ```		
+
+##### (2): L'IDentifiant d'un type chainable est obligatoire pour repérer le widget dans l'activité action. Commence à **1** et s'incrémente pour chaque chainable ajouté dans le type. Par exemple, un 1er slider aura un ID à **1** puis le suivant aura un ID à **2** puis un editText suivant aura un ID à **3**, etc...
+```text
+"type" : "slider:setvol@**1**@350@100@Define volume:&slider:setsize@**2**@350@100@Define size:&editText:room@**3**@300@Define room"
+```	
 
 ```text
 ```	
