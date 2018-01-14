@@ -139,7 +139,6 @@ Les menu de navigateur regroupent les actions selon votre configuration.
 },
 ```		
 
-
 | Propriété 	| Obligatoire | Description 	|
 |     :---:     | :---:   | --- 			|
 | **Nom de l'action**    | Oui  | Le nom de l'action à exécuter. Apparait dans le menu déroulant de l'application et aussi dans la page de l'action.|
