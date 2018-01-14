@@ -124,7 +124,7 @@ Les menu de navigateur regroupent les actions selon votre configuration.
 				"command" : "nom de la commande à exécuter dans le plugin",
 				"type" : "Type d'action à effectuer",
 				"icon" : {
-					"name" : "nom de l'icone image pour l'action dans le menu",
+					"name" : "nom de l'icone",
 					"deftype" : "type d'icone",
 					"defpackage" : "package de définition de l'icone"
 				}
@@ -148,7 +148,7 @@ Les menu de navigateur regroupent les actions selon votre configuration.
 | **plugin**  | Non  | Défini un plugin spécifique pour l'action. Si aucun plugin n'est spécifié alors le plugin global (au niveau du menu) est utilisé.|
 | **command**  | Non  | Si nécessaire, les paramètres de commande du plugin pour l'action.|
 | **type**  | Non  | Voir le tableau des types d'actions ci-dessous.|
-| **icon**  | Non  | Défini un icon pour l'action dans le navigateur.<BR><BR>3 paramètres sont à définir:<BR>**name:** Le nom de l'icône.<BR>**deftype:** La définition du type d'icône. Doit toujours être "drawable".<BR>**deftype:** La définition du package d'icônes. Doit toujours être "android".<BR><BR>Référez-vous au fichier android/images/Icons.png pour avoir une représentation des icônes disponibles et leurs noms.|
+| **icon**  | Non  | Défini un icône pour l'action dans le navigateur.<BR>![GitHub Logo](/images/icones.png)<BR><BR>3 paramètres sont à définir:<BR>**name:** Le nom de l'icône.<BR>**deftype:** Le type d'icône. Doit toujours être "drawable".<BR>**defpackage:** Package de définition de l'icône. Doit toujours être "android".<BR><BR>Référez-vous au fichier `android/images/Icons.png` pour avoir une représentation des icônes disponibles et leurs noms.|
 
 <BR> <BR>
 	
@@ -184,14 +184,6 @@ En plus de spécifier un nom de client Avatar, comme par exemple "Salon", il est
 
 <BR> <BR>
 
-#### Définition des icônes d'actions
-
-| Propriété 	| Obligatoire | Description 	|
-|     :---:     | :---:   | --- 			|
-| **name**    | Oui  | Nom de l'icône.|
-
-
-<BR> <BR>
 
 
 ## Versions
