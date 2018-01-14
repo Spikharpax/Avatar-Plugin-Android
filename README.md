@@ -7,11 +7,14 @@ Un client Android pour Avatar est bi-directionnel. Il envoie vos règles à Avat
 
 ![GitHub Logo](/images/main.png)
 
+<BR> <BR>
 
 ## Installation
 - Installez l'application Avatar  sur votre smartphone depuis le Play Store.
 - Téléchargez et dézippez le fichier `Avatar-Plugin-Android.zip` dans un répertoire temporaire
 - Copiez le répertoire `android` dans le répertoire `Avatar-Serveur/plugins`
+
+<BR> <BR>
 
 ## Configuration
 
@@ -44,6 +47,7 @@ A l'installation, un répertoire de liaison `android/clients/Android` existe pou
 ### Configuration sur le smartphone
 Vous devez définir quelques paramètres sur le smartphone, référez-vous à l'aide en ligne dans la page d'À propos de l'application.
 
+<BR> <BR>
 
 ## Les règles	
 
@@ -64,10 +68,8 @@ Avatar vous répond les phrases pré-définies pour chaque client dans le fichie
 ```	
 	
 	
-## Les actions du menu de l'application	
-Il est possible de définir des actions "textes" dans le menu navigateur de l'application. Ces actions sont entièrement paramètrables depuis le serveur.
-
-Les actions sont au format JSON et sont définies dans le fichier `client.ini` du répertoire du client, ainsi chaque client peut avoir son propre menu d'actions.
+## Les actions du navigateur
+Il est possible de définir des actions "textes" dans le navigateur de l'application. Ces actions sont regroupées par menus et sont entièrement paramètrables. Ils sont définis dans le fichier `client.ini` du répertoire de chaque client qui peut ainsi avoir ses propres menus et actions.
 
 **Point d'entré:**
 ```xml
@@ -76,7 +78,9 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 },
 ```		
 	
-### Le menu
+### Les menus
+Les menu de navigateur regroupent les actions selon votre configuration. 
+
 ```xml
 "navigation_cmds" : { 
 	"Nom de Menu 1" : { 
@@ -144,12 +148,12 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 | **plugin**  | Non  | Défini un plugin spécifique pour l'action. Si aucun plugin n'est spécifié alors le plugin global (au niveau du menu) est utilisé.|
 | **command**  | Non  | Si nécessaire, les paramètres de commande du plugin pour l'action.|
 | **type**  | Non  | Voir le tableau des types d'actions ci-dessous.|
-| **icon**  | Non  | |
+| **icon**  | Non  | Défini un icon pour l'action dans le navigateur.<BR><BR>3 paramètres sont à définir:<BR>**name:** Le nom de l'icône.<BR>**deftype:** La définition du type d'icône. Doit toujours être "drawable".<BR>**deftype:** La définition du package d'icônes. Doit toujours être "android".<BR><BR>Référez-vous au fichier android/images/Icons.png pour avoir une représentation des icônes disponibles et leurs noms.|
 
 <BR> <BR>
 	
 
-#### Types d'actions:
+#### Types d'actions
 | Type 	|  Chainable(1) | Description 	|
 |     :---:   | :---:    | --- 			|
 | **normal** | Non | Le paramètre par défaut si cette propriété n'est pas définie. Ce type n'affiche pas de page d'activité pour l'action. Après avoir sélectionné l'action dans le menu déroulant de l'application, celle-ci est exécutée directement une seule fois.<BR><BR>**Exemple:**<BR>&emsp;&emsp;"type": "normal"<BR><BR>|
@@ -170,7 +174,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 
 <BR> <BR>
 
-#### Mots-clés pour le paramètre client:
+#### Mots-clés pour le paramètre client
 En plus de spécifier un nom de client Avatar, comme par exemple "Salon", il est possible de définir des mots-clés:
 
 | client 	|  Description 	|
@@ -179,6 +183,16 @@ En plus de spécifier un nom de client Avatar, comme par exemple "Salon", il est
 | **Server**    | Permet de définir l'exécution de l'action sur le serveur Avatar.|
 
 <BR> <BR>
+
+#### Définition des icônes d'actions
+
+| Propriété 	| Obligatoire | Description 	|
+|     :---:     | :---:   | --- 			|
+| **name**    | Oui  | Nom de l'icône.|
+
+
+<BR> <BR>
+
 
 ## Versions
 
