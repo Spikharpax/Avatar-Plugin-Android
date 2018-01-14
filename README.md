@@ -9,7 +9,7 @@ Un client Android pour Avatar est bi-directionnel. Il envoie vos règles à Avat
 
 
 ## Installation
-- Installez l'application Avatar depuis l'APP Store sur votre smartphone
+- Installez l'application Avatar  sur votre smartphone depuis le Play Store.
 - Téléchargez et dézippez le fichier `Avatar-Plugin-Android.zip` dans un répertoire temporaire
 - Copiez le répertoire `android` dans le répertoire `Avatar-Serveur/plugins`
 
@@ -146,8 +146,7 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 | **type**  | Non  | Voir le tableau des types d'actions ci-dessous.|
 | **icon**  | Non  | |
 
-```text
-```	
+<BR> <BR>
 	
 
 #### Types d'actions:
@@ -169,19 +168,17 @@ Les actions sont au format JSON et sont définies dans le fichier `client.ini` d
 "type" : "slider:setvol@**1**@350@100@Define volume:&slider:setsize@**2**@350@100@Define size:&editText:room@**3**@300@Define room"
 ```	
 
-```text
-```	
+<BR> <BR>
 
 #### Mots-clés pour le paramètre client:
 En plus de spécifier un nom de client Avatar, comme par exemple "Salon", il est possible de définir des mots-clés:
+
 | client 	|  Description 	|
 |     :---:     | --- 			|
 | **currentRoom**    | Comme pour un client fixe sur PC Windows, "currentRoom" permet de définir l'exécution de l'action pour la pièce courante. La pièce courante est définie soit par la propriété `default.client` du fichier de propriétés d'Avatar, soit par des capteurs de présences qui modifient automatiquement la variable `Avatar.currentRoom`, soit par tout autre moyen, comme par exemple, un menu de l'application qui modifie cette variable, une règle vocale "Je suis dans le Salon", etc... Ainsi, une commande unique peut commander le même équipement dans toutes les pièces. Par exemple, une action "Allume la lumière" sera donc exécutée dans la pièce courante, indépendamment de l'endroit où vous vous trouvez.|
 | **Server**    | Permet de définir l'exécution de l'action sur le serveur Avatar.|
 
-
-```text
-```	 
+<BR> <BR>
 
 ## Versions
 
