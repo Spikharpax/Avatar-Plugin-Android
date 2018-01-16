@@ -5,7 +5,7 @@ Ce plugin est un client Android pour le framework [Avatar](https://github.com/Sp
 
 Un client Android pour Avatar est bi-directionnel. Il envoie vos règles à Avatar et reçoit les messages de confirmation sur son haut parleur. Il peut aussi recevoir des demandes vocales directes provenants de plugins et attendre une réponse. Il gère même les dialogues de questions/réponses vous permettant ainsi d'effectuer de véritables conversations avec Avatar depuis votre smartphone exactement de la même façon qu'un client fixe sur un PC Windows.
 
-![GitHub Logo](/images/main.png)
+![GitHub Logo](/images/gif_hal.gif)
 
 <BR> <BR>
 
