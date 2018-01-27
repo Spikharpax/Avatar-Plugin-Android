@@ -316,7 +316,7 @@ Plusieurs paramètres peuvent définir ce "QUI". En effet, ce paramètre peut pr
 - Le traitement d'un ordre vocale d'un client fixe (dans le fichier action du plugin) peut aussi envoyer un paramètre avec un nom différent...
 - Même punition avec le client mobile...
 
-Bref, vous l'aurez compris, il est nécessaire d'utiliser toujours les mêmes noms pour toutes ces sources et de bien structurer les développements.<BR>
+Bref, vous l'aurez compris, il est nécessaire d'utiliser toujours les mêmes noms de variables pour toutes ces sources et de bien structurer les développements.<BR>
 Imaginons maintenant une fonction qui retourne le bon nom pour le **QUI doit l'exécuter**:
 
 
@@ -366,6 +366,10 @@ callback();
 }
 ```
 
+<BR> 
+Vous pouvez retrouver des exemples de gestion des clients (les QUI) dans le plugin `generic` et `SonosPlayer`.
+
+<BR> 
 
 ## Versions
 
