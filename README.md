@@ -1,26 +1,25 @@
 Android client
 ==============
 
-Cette application Android est un client pour [Avatar](https://github.com/Spikharpax/Avatar-Serveur).
+Cette application Android est un client pour le framework [Avatar](https://github.com/Spikharpax/Avatar-Serveur).
 
-Il se comporte comme un véritable client Avatar avec toutes ses possibilités:
-- Comme un client fixe sur un PC, il peut être associé à une pièce mais a l'avantage supplémentaire d'être mobile.
+Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar:
+- Il peut être associé à une pièce mais a l'avantage supplémentaire d'être mobile.
 - Il est bi-directionnel. Vous ne faites pas qu'envoyer vos règles à Avatar, il reçoit aussi ses messages sur son haut parleur. De même, il accepte les dialogues de questions/réponses (les askme) vous permettant ainsi d'effectuer de véritables conversations synchrones avec Avatar depuis votre smartphone.
-- Vous pouvez le configurer pour que les dialogues soient envoyés sur votre système de son préféré, comme par exemple, votre système Sonos.
+- Vous pouvez le configurer pour que les dialogues soient envoyés sur votre système de son préféré, comme par exemple, votre système [Sonos](https://github.com/Spikharpax/Avatar-Plugin-SonosPlayer).
 - Son menu navigateur vous permet de créer des actions sous formes de textes entièrement configurables sans aucun développement avec la possibilité d'y ajouter des paramètres de saisie. Par exemple, vous avez un plugin qui permet de gèrer la température de votre chauffage ? Créez une action de menu associée à ce plugin, ajoutez un slider pour définir la température et une liste déroulante de choix pour sélectionner la pièce où la température doit être modifier. 
-
-![GitHub Logo](/images/main.png)
 
 <BR> <BR>
 
+![GitHub Logo](/images/gif_hal.gif)
+
+<BR>
 
 ## Compatibilité
 - [X] Avatar Serveur 0.1.6
 - [X] OS Android >= 4.1 Jelly Bean (API 16) <= 8.1 Oreo (API 27)
 
-La compatibilité avec vos plugins existants est normalement maintenue. Néanmoins, il peut arriver qu'une très légère modification soit nécessaire.
-
-
+La compatibilité avec vos plugins existants est normalement maintenue. Néanmoins, il peut arriver que de très légères modifications soient nécessaires.<BR> Voir le chapitre [Développement](#d%C3%A9veloppement).
 
 
 ## Installation
@@ -28,7 +27,6 @@ La compatibilité avec vos plugins existants est normalement maintenue. Néanmoi
 - Téléchargez et dézippez le fichier `Avatar-Plugin-Android.zip` dans un répertoire temporaire.
 - Copiez le répertoire `android` dans le répertoire `Avatar-Serveur/plugins`.
 
-<BR> <BR>
 
 ## Configuration
 
@@ -39,7 +37,7 @@ A l'installation, un répertoire de liaison `android/clients/Android` existe pou
 **Pour changer le nom du client par défaut:**
 - Renommez le répertoire `android/clients/Android` par le nom que vous avez donné dans les paramètres de l'application installée sur votre smartphone.
 	- Par exemple, sur votre smartphone, vous avez changé le nom en `Salon`, renommez alors le répertoire `android/clients/Android` en `android/clients/Salon`
-- Ouvrez le fichier `client.ini` dans le répertoire de votre client et modifiez la propriété `client` par le nom que vous avez donné .
+- Ouvrez le fichier `client.ini` dans le répertoire de votre client et modifiez la propriété `client` par le nom que vous avez donné.
 
 **Pour ajouter un autre client:**
 - Copiez un répertoire de liaison disponible dans `android/clients/` en le nom que vous avez donné dans les paramètres de l'application installée sur votre smartphone.
@@ -111,9 +109,7 @@ _.map(clients, function(num) {
 
 
 **Important:**<BR>
-Plusieurs propriétés sont envoyées automatiquement avec la requète HTTP de votre règle vers le serveur Avatar. Ces propriétés peuvent être utilisées dans vos plugins. (voir le chapitre Développement).
-
-<BR> <BR>
+Plusieurs propriétés sont envoyées automatiquement avec la requète HTTP de votre règle vers le serveur Avatar. Ces propriétés peuvent être utilisées dans vos plugins. Voir le chapitre [Développement](#d%C3%A9veloppement).
 
 
 ## Utilisation
@@ -123,7 +119,7 @@ Plusieurs propriétés sont envoyées automatiquement avec la requète HTTP de v
 	- Le bip vous signifie que la reconnaissance est disponible. Il peut arriver dans certains cas qu'il y ait une latence dû au réseau Wi-Fi ou aux performances de votre smartphone. Dans tous les cas, si cela arrive, soyez patient. L'application se débloquera toujours d'elle-même. 
 - Dictez votre règle.
 
-Pour les dialogues AskMe, attendez le bip de la reconnaissance vocale pour dicter vos réponses.
+Pour les dialogues AskMe, attendez **toujours** le bip de la reconnaissance vocale pour dicter vos réponses.
 
 
 ## Les règles	
@@ -180,12 +176,14 @@ Les menus de navigateur regroupent les actions selon votre configuration, par ex
 },
 ```		
 
+<BR>
+
 | Propriété 	| Obligatoire | Description 	|
 |     :---:     | :---:   | --- 			|
 | **Nom de Menu**    | Oui  | Le menu regroupant les actions dans le menu déroulant de l'application et apparaissant aussi en haut de la page de l'action.|
 | **description**    | Non  | Une description apparaissant en dessous du menu dans la page de l'action.|
-| **plugin**  | Non  | Défini un plugin global pour toutes les actions du menu. Si aucun plugin n'est spécifié pour l'action du menu, alors ce plugin est utilisé.<BR>**Attention**, si ce paramètre n'est pas défini, toutes les actions du menu doivent avoir un paramètre `plugin`.|
-| **client**  | Non  | Défini un client global pour l'exécution de toutes les actions du menu. Si aucun client n'est spécifié pour l'action alors ce client est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom du client Android défini dans les paramètres de l'application est utilisé. Voir le tableau `Mots-clés pour le paramètre client` pour les mot-clés possibles.<BR><BR>**Rappel:** Avatar est une application clients/serveur, par conséquent, toutes les actions sont associées à un client.|
+| **plugin**  | Non (partiel)  | Défini un plugin global pour toutes les actions du menu. Si aucun plugin n'est spécifié pour l'action du menu, alors ce plugin est utilisé.<BR>**Attention**, si ce paramètre n'est pas défini, toutes les actions du menu doivent avoir un paramètre `plugin`.|
+| **client**  | Non  | Défini un client global pour l'exécution de toutes les actions du menu. Si aucun client n'est spécifié pour l'action alors ce client est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom du client Android défini dans les paramètres de l'application est utilisé. Voir le tableau [Mots-clés pour le paramètre client](#mots-cl%C3%A9s-pour-le-param%C3%A8tre-client) pour les mot-clés possibles.|
 | **actions**  | Oui  | Défini les actions à exécuter pour ce menu. voir le tableau `Actions de menu` suivant pour la description d'une action.|
 
 
@@ -222,13 +220,15 @@ Les menus de navigateur regroupent les actions selon votre configuration, par ex
 },
 ```		
 
+<BR>
+
 | Propriété 	| Obligatoire | Description 	|
 |     :---:     | :---:   | --- 			|
 | **Nom de l'action**    | Oui  | Le nom de l'action à exécuter. Apparait dans le menu déroulant de l'application et aussi dans la page de l'action.|
 | **order**    | Oui  | L'ordre de l'action dans le menu. Commence à 1 et s'incrémente pour chaque action du menu.<BR>Vous pouvez modifier l'ordre de la numérotation des actions, par exemple, commencer à order=3 pour la 1ere action puis order=1 pour la 2ème et order=1 pour la 3ème, ce qui compte, c'est qu'il y est un nombre égal d'order et d'actions.|
 | **description**    | Non  | Une description apparaissant en dessous de l'action dans la page de l'action.|
-| **client**  | Non  | Défini un client spécifique pour l'exécution de l'action. Si aucun client n'est spécifié pour l'action, alors le client global (au niveau du menu) est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom de ce client Android est utilisé. Voir le tableau `Mots-clés pour le paramètre client` pour les mot-clés possibles. **Rappel:** Avatar est une application clients/serveur, par conséquent, toutes les actions sont associées à un client.|
-| **plugin**  | Non  | Défini un plugin spécifique pour l'action. Si aucun plugin n'est spécifié alors le plugin global (au niveau du menu) est utilisé.|
+| **client**  | Non  | Défini un client spécifique pour l'exécution de l'action. Si aucun client n'est spécifié pour l'action, alors le client global (au niveau du menu) est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom du client Android est utilisé. Voir le tableau `Mots-clés pour le paramètre client` pour les mot-clés possibles.|
+| **plugin**  | Non (partiel)  | Défini un plugin spécifique pour l'action. Si aucun plugin n'est spécifié alors le plugin global (au niveau du menu) est utilisé.|
 | **close**  | Non  | Comme une page peut être ouverte pour une action, par exemple pour choisir un paramètre à envoyer avec la commande, ce paramètre est à utiliser si vous désirez la fermer après son exécution et revenir dans la page principale de l'application.<BR>A utiliser aussi lorsque votre plugin envoie un message de confirmation vocale. Les message vocaux ne peuvent être vocalisés que dans la page principale, donc fermez la page Action est nécessaire dans ce cas pour vocaliser le message.<BR>|
 | **command**  | Non  | Si nécessaire, les paramètres de commande du plugin pour l'action.|
 | **type**  | Non  | Voir le tableau des types d'actions ci-dessous.|	
@@ -265,7 +265,7 @@ En plus de spécifier un nom de client Avatar, comme par exemple "Salon", il est
 |     :---:     | --- 			|
 | **currentRoom**    | Comme pour un client fixe sur PC Windows, "currentRoom" permet de définir l'exécution de l'action pour la pièce courante. La pièce courante est définie soit par la propriété `default.client` du fichier de propriétés d'Avatar, soit par des capteurs de présences qui modifient automatiquement la variable `Avatar.currentRoom`, soit par tout autre moyen, comme par exemple, un menu de l'application qui modifie cette variable, une règle vocale "Je suis dans le Salon", etc... Ainsi, une commande unique peut commander le même équipement dans toutes les pièces. Par exemple, une action "Allume la lumière" sera donc exécutée dans la pièce courante, indépendamment de l'endroit où vous vous trouvez.|
 | **Server**    | Permet de définir l'exécution de l'action sur le serveur Avatar.|
-| **N'importe quoi d'autre**    | Si vous définissez une autre valeur comme "client", vous devez gérer une autre propriété à envoyer au plugin pour le client. Voir l'exemple avec la valeur "la pièce sélectionnée" dans le chapitre ci-dessous.|
+| **N'importe quoi d'autre**    | Si vous définissez une autre valeur pour la propriété "client" de l'action, vous devrez ** absolument** gérer une autre propriété à envoyer au plugin comme nom de client pour l'exécution. Voir l'exemple avec la valeur "la pièce sélectionnée" dans le chapitre ci-dessous.|
 
 
 <BR> <BR>
@@ -274,7 +274,7 @@ En plus de spécifier un nom de client Avatar, comme par exemple "Salon", il est
 ## Quelques exemples
 Vous pouvez visualiser des exemples de création de menus/actions dans le fichier client.ini du répertoire de liaison du `plugin/clients`.
 
-Quelques exemples sont très intéresants pour connaitre le potentiel des actions et des propriétés que l'ont peut définir.<BR>
+Quelques exemples sont très intéresants pour connaitre le potentiel des actions et des propriétés qu'ont peut définir.<BR>
 Par exemple, Définir la propriété "client" avec une phrase (ex: la pièce sélectionnée) et ajouter un paramètre "setRoom" dans la requète HTTP qui recevra la valeur selectionnée qui sera traitée par le plugin.  
 
 Chercher "la pièce sélectionnée" dans le fichier client.ini de `plugin/clients` pour voir l'exemple.
@@ -301,7 +301,7 @@ if (data.action.mobile)  {
 Contient la valeur de la propriété **client** définie dans les actions de menus si celle-ci est présente (non obligatoire, certains plugins ne nécessitent pas de client pour fonctionner).<BR>
 Si la valeur est `currentRoom`, cette valeur est automatiquement remplacée par la pièce courante dans Avatar.
  
-Avec toute ces variables, nous pouvons "jouer" afin de récupérer tous ce que l'on veut, par exemple:<BR>
+Avec toute ces variables, nous pouvons "jouer" afin de récupérer tout ce que l'on veut, par exemple:<BR>
 Supposons notre plugin dans lequel nous voulons connaitre:
 - QUI a envoyé l'action
 - QUI doit l'exécuter
@@ -325,12 +325,12 @@ var setClient = function (data) {
 	var client = data.client;	
 
 	if (data.action.room) {
-		// Client spécifique fixe (la commande ne provient pas du client)
+		// Client spécifique fixe (la commande provient du paramètre HTTP "client" d'un client Android)
 		client = data.action.room;
 	}
 	
 	if (data.action.setRoom) {
-		// Client spécifique non fixe dans la commande HTTP du client Android
+		// Client spécifique non fixe dans la commande HTTP d'un client Android
 		client = data.action.setRoom;
 	}
 	return client;
