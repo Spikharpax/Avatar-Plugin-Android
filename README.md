@@ -367,7 +367,7 @@ callback();
 ```
 
 <BR> 
-Vous pouvez retrouver des exemples de gestion des clients (les QUI) dans le plugin `generic` et `SonosPlayer`.
+Vous pouvez retrouver des exemples de gestion des clients (les QUI) dans les plugins `generic` et `SonosPlayer`.
 
 <BR> 
 
