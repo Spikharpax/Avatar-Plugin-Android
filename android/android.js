@@ -1,5 +1,5 @@
 var extend  = require('extend')
-	, fs  = require('fs')
+	, fs  = require('fs-extra')
 	, path   = require('path')
 	 _ = require('underscore');
 	 
