@@ -11,7 +11,7 @@ Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar
 
 <BR> <BR>
 
-            ![GitHub Logo](/images/gif_hal.gif)
+![GitHub Logo](/images/gif_hal.gif)
 
 <BR>
 
