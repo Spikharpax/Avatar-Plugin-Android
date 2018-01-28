@@ -5,7 +5,7 @@ Cette application Android est un client pour le framework [Avatar](https://githu
 
 Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar:
 - Il peut être associé à une pièce mais a l'avantage supplémentaire d'être mobile.
-- Il est bi-directionnel. Vous ne faites pas qu'envoyer vos règles à Avatar, il reçoit aussi ses messages sur son haut parleur. De même, il accepte les dialogues de questions/réponses (les askme) vous permettant ainsi d'effectuer de véritables conversations synchrones avec Avatar depuis votre smartphone.
+- Il est bi-directionnel. Il ne fait pas qu'envoyer vos règles à Avatar, il reçoit aussi ses messages sur son haut parleur. De même, il accepte les dialogues de questions/réponses (les askme) vous permettant ainsi d'effectuer de véritables conversations synchrones avec Avatar depuis votre smartphone.
 - Vous pouvez le configurer pour que les dialogues soient envoyés sur votre système de son préféré, comme par exemple, votre système [Sonos](https://github.com/Spikharpax/Avatar-Plugin-SonosPlayer).
 - Son menu navigateur vous permet de créer des actions sous formes de textes entièrement configurables sans aucun développement avec la possibilité d'y ajouter des paramètres de saisie. Par exemple, vous avez un plugin qui permet de gèrer la température de votre chauffage ? Créez une action de menu associée à ce plugin, ajoutez un slider pour définir la température et une liste déroulante de choix pour sélectionner la pièce où la température doit être modifié. 
 
@@ -20,7 +20,8 @@ Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar
 - [X] OS Android >= 4.1 Jelly Bean (API 16) <= 8.1 Oreo (API 27)
 
 **A vérifier:**<BR>
-Si vous utilisez des plugins de mon github, vérifiez que vous avez la dernière version disponible. Plugins mis à jour pour la version 0.1.6 d'Avatar:
+Si vous utilisez des plugins de mon github, vérifiez que vous avez la dernière version disponible.<BR>
+Plugins mis à jour pour la version 0.1.6 d'Avatar:
 - SonosPlayer
 - Freebox  
 
@@ -60,6 +61,10 @@ A l'installation, un répertoire de liaison `android/clients/Android` existe pou
 		"port"  : 8765
 	},
 ```
+
+**De préférence:**<BR>
+Si vous avez plusieurs client Android, définissez des ports de communication différents.
+
 
 ### Configuration sur le smartphone
 Vous devez définir quelques paramètres supplémentaires sur le smartphone, référez-vous à l'aide en ligne dans la page d'À propos de l'application.
