@@ -203,7 +203,7 @@ Les menus de navigateur regroupent les actions selon votre configuration, par ex
 | **client**  | Non  | Défini un client global pour l'exécution de toutes les actions du menu. Si aucun client n'est spécifié pour l'action alors ce client est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom du client Android défini dans les paramètres de l'application est utilisé. Voir le tableau [Mots-clés pour le paramètre client](#mots-cl%C3%A9s-pour-le-param%C3%A8tre-client) pour les mot-clés possibles.|
 | **actions**  | Oui  | Défini les actions à exécuter pour ce menu. voir le tableau `Actions de menu` suivant pour la description d'une action.|
 
-<BR> <BR>
+<BR>
 
 ### Les actions de menu
 ```xml
@@ -251,7 +251,7 @@ Les menus de navigateur regroupent les actions selon votre configuration, par ex
 | **type**  | Non  | Voir le tableau des types d'actions ci-dessous.|	
 | **icon**  | Non  | Défini une image pour l'action dans le navigateur.<BR>![GitHub Logo](/images/icones.png)<BR><BR>3 paramètres sont à définir:<BR>**name:** Le nom de l'image.<BR>**deftype:** Le type d'image. Doit toujours être "drawable".<BR>**defpackage:** Package de définition de l'image. Doit toujours être "android".<BR><BR>Référez-vous au fichier `android/images/Icons.png` pour avoir une représentation des icones Android disponibles et leurs noms.|
 
-<BR> <BR>
+<BR>
 	
 
 #### Types d'actions
@@ -273,7 +273,7 @@ Les menus de navigateur regroupent les actions selon votre configuration, par ex
 "type" : "slider:setvol@**1**@350@100@Define volume:&slider:setsize@**2**@350@100@Define size:&editText:room@**3**@300@Define room"
 ```	
 
-<BR> <BR>
+<BR>
 
 #### Mots-clés pour le paramètre client
 En plus de spécifier un nom de client Avatar, comme par exemple "Salon", il est possible de définir des mots-clés:
