@@ -7,9 +7,9 @@ Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar
 - Il peut être associé à une pièce mais a l'avantage supplémentaire d'être mobile.
 - Il est bi-directionnel. Vous ne faites pas qu'envoyer vos règles à Avatar, il reçoit aussi ses messages sur son haut parleur. De même, il accepte les dialogues de questions/réponses (les askme) vous permettant ainsi d'effectuer de véritables conversations synchrones avec Avatar depuis votre smartphone.
 - Vous pouvez le configurer pour que les dialogues soient envoyés sur votre système de son préféré, comme par exemple, votre système [Sonos](https://github.com/Spikharpax/Avatar-Plugin-SonosPlayer).
-- Son menu navigateur vous permet de créer des actions sous formes de textes entièrement configurables sans aucun développement avec la possibilité d'y ajouter des paramètres de saisie. Par exemple, vous avez un plugin qui permet de gèrer la température de votre chauffage ? Créez une action de menu associée à ce plugin, ajoutez un slider pour définir la température et une liste déroulante de choix pour sélectionner la pièce où la température doit être modifier. 
+- Son menu navigateur vous permet de créer des actions sous formes de textes entièrement configurables sans aucun développement avec la possibilité d'y ajouter des paramètres de saisie. Par exemple, vous avez un plugin qui permet de gèrer la température de votre chauffage ? Créez une action de menu associée à ce plugin, ajoutez un slider pour définir la température et une liste déroulante de choix pour sélectionner la pièce où la température doit être modifié. 
 
-<BR> <BR>
+<BR> 
 
 ![GitHub Logo](/images/gif_hal.gif)
 
@@ -18,6 +18,11 @@ Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar
 ## Compatibilité
 - [X] Avatar Serveur 0.1.6
 - [X] OS Android >= 4.1 Jelly Bean (API 16) <= 8.1 Oreo (API 27)
+
+**A vérifier:**<BR>
+Si vous utilisez des plugins de mon github, vérifiez que vous avez la dernière version disponible. Plugins mis à jour pour la version 0.1.6 d'Avatar:
+- SonosPlayer
+- Freebox  
 
 La compatibilité avec vos plugins existants est normalement maintenue. Néanmoins, dû aux améliorations d'Avatar 0.1.6, il peut arriver que de très légères modifications soient nécessaires. Voir le chapitre [Développement](#d%C3%A9veloppement) pour plus de précisions.
 
@@ -57,7 +62,7 @@ A l'installation, un répertoire de liaison `android/clients/Android` existe pou
 ```
 
 ### Configuration sur le smartphone
-Vous pouvez définir quelques paramètres supplémentaires sur le smartphone, référez-vous à l'aide en ligne dans la page d'À propos de l'application.
+Vous devez définir quelques paramètres supplémentaires sur le smartphone, référez-vous à l'aide en ligne dans la page d'À propos de l'application.
 
 ### Configuration du serveur Avatar
 Une nouvelle propriété "mobile" a été ajoutée dans le fichier Avatar.prop (V 0.1.6) afin de savoir si le client est un client Android et pouvoir le gérer dans vos plugins.
@@ -225,7 +230,7 @@ Les menus de navigateur regroupent les actions selon votre configuration, par ex
 | Propriété 	| Obligatoire | Description 	|
 |     :---:     | :---:   | --- 			|
 | **Nom de l'action**    | Oui  | Le nom de l'action à exécuter. Apparait dans le menu déroulant de l'application et aussi dans la page de l'action.|
-| **order**    | Oui  | L'ordre de l'action dans le menu. Commence à 1 et s'incrémente pour chaque action du menu.<BR>Vous pouvez modifier l'ordre de la numérotation des actions, par exemple, commencer à order=3 pour la 1ere action puis order=1 pour la 2ème et order=1 pour la 3ème, ce qui compte, c'est qu'il y est un nombre égal d'order et d'actions.|
+| **order**    | Oui  | L'ordre de l'action dans le menu. Commence à 1 et s'incrémente pour chaque action du menu.<BR>Vous pouvez modifier l'ordre de la numérotation des actions, par exemple, commencer à order=3 pour la 1ere action puis order=1 pour la 2ème et order=1 pour la 3ème, ce qui compte, c'est qu'il y ait un nombre égal d'order et d'actions.|
 | **description**    | Non  | Une description apparaissant en dessous de l'action dans la page de l'action.|
 | **client**  | Non  | Défini un client spécifique pour l'exécution de l'action. Si aucun client n'est spécifié pour l'action, alors le client global (au niveau du menu) est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom du client Android est utilisé. Voir le tableau [Mots-clés pour le paramètre client](#mots-cl%C3%A9s-pour-le-param%C3%A8tre-client) pour les mot-clés possibles.|
 | **plugin**  | Non (partiel)  | Défini un plugin spécifique pour l'action. Si aucun plugin n'est spécifié alors le plugin global (au niveau du menu) est utilisé.|
@@ -328,7 +333,9 @@ var setClient = function (data) {
 
 	if (data.action.room) {
 		// Client spécifique fixe (la commande provient du paramètre HTTP "client" d'un client Android)
-		client = data.action.room;
+		// Ou
+		// de la fonction Avatar.ia.clientFromRule() qui retourne 'current' s'il n'y a pas de nom de client dans la règle vocale
+		client = (data.action.room != 'current') ? data.action.room : (Avatar.currentRoom) ? Avatar.currentRoom : Config.default.client;
 	}
 	
 	if (data.action.setRoom) {
@@ -341,7 +348,7 @@ var setClient = function (data) {
 
 **Explication:**<BR>
 - `client` est d'abord "sété" avec `data.client`, de cette façon, si c'est un client fixe qui envoie l'action à exécuter sur "ce client", on est bon...
-- Ensuite, on test si il y a une variable `data.action.room` non null. Si c'est le cas, alors c'est a exécuter sur le client défini dans cette variable.
+- Ensuite, on test si il y a une variable `data.action.room` non null. Si c'est le cas, alors c'est a exécuter sur le client défini dans cette variable qui peut être la pièce courante ou un nom de pièce.
 - Ensuite, on peut "jouer" avec tous les autres paramètres possibles, comme `data.action.setRoom` qui est défini dans une requète HTTP du client Android...
 - Si il y en a d'autres, alors on peut continuer à tester d'autres variables...
 - Et on retourne client dans la fonction principale, ce qui donne:
