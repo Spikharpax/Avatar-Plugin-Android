@@ -27,12 +27,14 @@ Plugins mis à jour pour la version 0.1.6 d'Avatar:
 
 La compatibilité avec vos plugins existants est normalement maintenue. Néanmoins, dû aux améliorations d'Avatar 0.1.6, il peut arriver que de très légères modifications soient nécessaires. Voir le chapitre [Développement](#d%C3%A9veloppement) pour plus de précisions.
 
+<BR><BR>
 
 ## Installation
 - Installez l'application Avatar  sur votre smartphone depuis le Play Store.
 - Téléchargez et dézippez le fichier `Avatar-Plugin-Android.zip` dans un répertoire temporaire.
 - Copiez le répertoire `android` dans le répertoire `Avatar-Serveur/plugins`.
 
+<BR><BR>
 
 ## Configuration
 
@@ -121,6 +123,7 @@ _.map(clients, function(num) {
 **Important:**<BR>
 Plusieurs propriétés sont envoyées automatiquement avec la requète HTTP de votre règle vers le serveur Avatar. Ces propriétés peuvent être utilisées dans vos plugins. Voir le chapitre [Développement](#d%C3%A9veloppement).
 
+<BR><BR>
 
 ## Utilisation
 
@@ -131,6 +134,7 @@ Plusieurs propriétés sont envoyées automatiquement avec la requète HTTP de v
 
 Pour les dialogues AskMe, attendez **toujours** le bip de la reconnaissance vocale pour dicter vos réponses.
 
+<BR><BR>
 
 ## Les règles	
 
@@ -151,7 +155,8 @@ Avatar vous répond les phrases pré-définies pour chaque client dans le fichie
 		}
 	}	
 ```	
-	
+
+<BR> <BR>
 	
 ## Les actions du navigateur
 Il est possible de définir des actions "textes" dans le navigateur de l'application. Ces règles sont associéés à des règles de plugins existants **uniquement**.
@@ -164,6 +169,8 @@ Ces actions sont regroupées par menus et sont entièrement paramètrables. Ils 
 	
 },
 ```		
+
+<BR>
 	
 ### Les menus
 Les menus de navigateur regroupent les actions selon votre configuration, par exemple par périphériques (sons, box tv, box domotique) ou encore par pièces ('Salon', 'Chambre', etc...). 
@@ -196,7 +203,7 @@ Les menus de navigateur regroupent les actions selon votre configuration, par ex
 | **client**  | Non  | Défini un client global pour l'exécution de toutes les actions du menu. Si aucun client n'est spécifié pour l'action alors ce client est utilisé. Si aucun client n'est spécifié (globalement et dans l'action) alors le nom du client Android défini dans les paramètres de l'application est utilisé. Voir le tableau [Mots-clés pour le paramètre client](#mots-cl%C3%A9s-pour-le-param%C3%A8tre-client) pour les mot-clés possibles.|
 | **actions**  | Oui  | Défini les actions à exécuter pour ce menu. voir le tableau `Actions de menu` suivant pour la description d'une action.|
 
-
+<BR> <BR>
 
 ### Les actions de menu
 ```xml
@@ -284,11 +291,12 @@ En plus de spécifier un nom de client Avatar, comme par exemple "Salon", il est
 ## Quelques exemples
 Vous pouvez visualiser des exemples de création de menus/actions dans le fichier client.ini du répertoire de liaison du `plugin/clients`.
 
-Quelques exemples sont très intéresants pour connaitre le potentiel des actions et des propriétés qu'ont peut définir.<BR>
+Quelques exemples sont très intéressants pour connaitre le potentiel des actions et des propriétés qu'ont peut définir.<BR>
 Par exemple, définir la propriété "client" avec une phrase (ex: la pièce sélectionnée) et ajouter un paramètre "setRoom" dans la requète HTTP qui recevra la valeur selectionnée qui sera traitée par le plugin.  
 
 Chercher "la pièce sélectionnée" dans le fichier client.ini de `plugin/clients` pour voir l'exemple.
 
+<BR> <BR>
 
 ## Développement
 
@@ -381,7 +389,7 @@ callback();
 <BR> 
 Vous pouvez retrouver des exemples de gestion des clients (les QUI) dans les plugins `generic` et `SonosPlayer`.
 
-<BR> 
+<BR> <BR>
 
 ## Versions
 
