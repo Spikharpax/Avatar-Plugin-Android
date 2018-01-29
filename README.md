@@ -22,8 +22,8 @@ Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar
 **A vérifier:**<BR>
 Si vous utilisez des plugins de mon github, vérifiez que vous avez la dernière version disponible.<BR>
 Plugins mis à jour pour la version 0.1.6 d'Avatar:
-- SonosPlayer
-- Freebox  
+- SonosPlayer 1.2 (Dépot prévu le 4-02)
+- Freebox 1.2 (Dépot prévu le 4-02)
 
 La compatibilité avec vos plugins existants est normalement maintenue. Néanmoins, dû aux améliorations d'Avatar 0.1.6, il peut arriver que de très légères modifications soient nécessaires. Voir le chapitre [Développement](#d%C3%A9veloppement) pour plus de précisions.
 
