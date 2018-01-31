@@ -72,13 +72,7 @@ Si vous avez plusieurs client Android, définissez des ports de communication di
 Vous devez définir quelques paramètres supplémentaires sur le smartphone, référez-vous à l'aide en ligne dans la page d'À propos de l'application.
 
 ### Configuration du serveur Avatar
-Une nouvelle propriété "mobile" a été ajoutée dans le fichier Avatar.prop (V 0.1.6) afin de savoir si le client est un client Android et pouvoir le gérer dans vos plugins.
-
-#### Utilisation de la propriété "mobile" dans vos plugins:
-
-**Avatar.isMobile(client)**<BR>
-- **true** si le client est un client mobile.
-- **false** si le client n'est pas un client mobile.
+Une nouvelle fonction `Avatar.isMobile()` a été ajoutée (Avatar V 0.1.6) afin de savoir si le client est un client Android et pouvoir le gérer dans vos plugins.
 
 ```js
 if (Avatar.isMobile(data.client)) {
@@ -86,6 +80,11 @@ if (Avatar.isMobile(data.client)) {
 }
 ```
 
+**Avatar.isMobile(client)**<BR>
+- **true** si le client est un client mobile.
+- **false** si le client n'est pas un client mobile.
+
+#### Exemple d'utilisation de la fonction `isMobile()` dans vos plugins:
 ```js
 var clients = Avatar.Socket.getClients();
 _.map(clients, function(num) {
