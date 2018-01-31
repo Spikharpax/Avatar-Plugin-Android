@@ -71,7 +71,10 @@ Si vous avez plusieurs client Android, définissez des ports de communication di
 ### Configuration sur le smartphone
 Vous devez définir quelques paramètres supplémentaires sur le smartphone, référez-vous à l'aide en ligne dans la page d'À propos de l'application.
 
+
 ### Configuration du serveur Avatar
+
+Aucune configuration n'est nécessaire, les clients mobiles sont reconnus automatiquement.<BR>
 Une nouvelle fonction `Avatar.isMobile()` a été ajoutée (Avatar V 0.1.6) afin de savoir si le client est un client Android et pouvoir le gérer dans vos plugins.
 
 ```js
