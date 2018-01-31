@@ -74,30 +74,6 @@ Vous devez définir quelques paramètres supplémentaires sur le smartphone, ré
 ### Configuration du serveur Avatar
 Une nouvelle propriété "mobile" a été ajoutée dans le fichier Avatar.prop (V 0.1.6) afin de savoir si le client est un client Android et pouvoir le gérer dans vos plugins.
 
-Pour le bon fonctionnement de l'application, ajoutez **systématiquement** le nom de votre (vos) client(s) Android dans cette propriété "mobile".
-```xml
-"default" : {
-	"client" : "Salon",
-	"mapping" : [],
-	"virtual" : [],
-	"virtual_name" : "",
-	"mobile" : ["Android"],
-	"reboot_time" : ""
-},
-```
-
-Autre exemple avec 2 clients android "Android" et "Tablette":
-```xml
-"default" : {
-	"client" : "Salon",
-	"mapping" : [],
-	"virtual" : [],
-	"virtual_name" : "",
-	"mobile" : ["Android","Tablette"],
-	"reboot_time" : ""
-},
-```
-
 #### Utilisation de la propriété "mobile" dans vos plugins:
 
 **Avatar.isMobile(client)**<BR>

@@ -289,7 +289,7 @@ var connect = exports.connect = function () {
 			warn("Avatar Server not started".red);
 		})
 		.on('connect', function() {
-			socket.emit('client_connect', Config.client, Config.http.remote.ip, Config.http.remote.port, false);
+			socket.emit('client_connect', Config.client, Config.http.remote.ip, Config.http.remote.port, false, true);
 		})
 		.on('disconnect', function() {
 			warn("Avatar Server gone".red);
