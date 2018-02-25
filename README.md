@@ -16,16 +16,17 @@ Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar
 <BR>
 
 ## Compatibilité
-- [X] Avatar Serveur 0.1.6
+- [X] Avatar Serveur >= 0.1.6
+	- Prendre la dernière version courante
 - [X] OS Android >= 4.1 Jelly Bean (API 16) <= 8.1 Oreo (API 27)
 
 **A vérifier:**<BR>
 Si vous utilisez des plugins de mon github, vérifiez que vous avez la dernière version disponible.<BR>
-Plugins mis à jour pour la version 0.1.6 d'Avatar:
+Plugins mis à jour pour la version courante d'Avatar:
 - SonosPlayer 1.2
 - Freebox 1.2
 
-La compatibilité avec vos plugins existants est normalement maintenue. Néanmoins, dû aux améliorations d'Avatar 0.1.6, il peut arriver que de très légères modifications soient nécessaires. Voir le chapitre [Développement](#d%C3%A9veloppement) pour plus de précisions.
+La compatibilité avec vos plugins existants est normalement maintenue. Néanmoins, dû aux améliorations d'Avatar, il peut arriver que de très légères modifications soient nécessaires. Voir le chapitre [Développement](#d%C3%A9veloppement) pour plus de précisions.
 
 <BR><BR>
 
@@ -74,7 +75,7 @@ Vous devez définir quelques paramètres supplémentaires sur le smartphone, ré
 
 ### Configuration du serveur Avatar
 Aucune configuration n'est nécessaire, les clients mobiles sont reconnus automatiquement.<BR>
-Une nouvelle fonction `Avatar.isMobile()` a été ajoutée (Avatar V 0.1.6) afin de savoir si le client est un client Android et pouvoir le gérer dans vos plugins.
+Une nouvelle fonction `Avatar.isMobile()` a été ajoutée (Avatar V 0.1.6 et supérieure) afin de savoir si le client est un client Android et pouvoir le gérer dans vos plugins.
 
 ```js
 if (Avatar.isMobile(data.client)) {
