@@ -33,7 +33,7 @@ La compatibilité avec vos plugins existants est normalement maintenue. Néanmoi
 <BR><BR>
 
 ## Installation
-- Depuis le Play Store sur votre smartphone, installez l'application `Avatar Android Client` ([Visualisation Browser Internet](https://play.google.com/store/apps/details?id=com.automation.home.avatar.avatarandroidclient)).
+- Depuis le Play Store sur votre smartphone, installez l'application `Avatar Android Client` ([App Store](https://play.google.com/store/apps/details?id=com.automation.home.avatar.avatarandroidclient)).
 - Téléchargez et dézippez le fichier `Avatar-Plugin-Android.zip` dans un répertoire temporaire.
 - Copiez le répertoire `android` dans le répertoire `Avatar-Serveur/plugins`.
 
@@ -57,7 +57,7 @@ A l'installation, un répertoire de liaison `android/clients/Android` existe dé
 
 
 ### Configuration sur le smartphone Android
-Depuis la version 0.1.1 du [Client Android pour Avatar ] (https://play.google.com/store/apps/details?id=com.automation.home.avatar.avatarandroidclient), la configuration est **automatique**.
+Depuis la version 0.1.1 du [Client Android pour Avatar ](https://play.google.com/store/apps/details?id=com.automation.home.avatar.avatarandroidclient), la configuration est **automatique**.
 
 Après avoir démarré le Serveur Avatar et lancé l'application sur votre téléphone:
 - Déplacez-vous dans les paramètres de l'application
