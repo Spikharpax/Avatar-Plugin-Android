@@ -5,9 +5,11 @@ Cette application Android est un client pour le framework [Avatar](https://githu
 
 Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar:
 - Il peut être associé à une pièce mais a l'avantage supplémentaire d'être mobile.
+	- Il peut être aussi utilisé comme clone d'un client existant. Les règles sont exécutées comme si le client fixe de la pièce les avait passé.
 - Il est bi-directionnel. Il ne fait pas qu'envoyer vos règles à Avatar, il reçoit aussi ses messages sur son haut parleur. De même, il accepte les dialogues de questions/réponses (les askme) vous permettant ainsi d'effectuer de véritables conversations synchrones avec Avatar depuis votre smartphone.
 - Vous pouvez le configurer pour que les dialogues soient envoyés sur votre système de son préféré, comme par exemple, votre système [Sonos](https://github.com/Spikharpax/Avatar-Plugin-SonosPlayer).
-- Son menu navigateur vous permet de créer des actions sous formes de textes entièrement configurables sans aucun développement avec la possibilité d'y ajouter des paramètres de saisie. Par exemple, vous avez un plugin qui permet de gèrer la température de votre chauffage ? Créez une action de menu associée à ce plugin, ajoutez un slider pour définir la température et une liste déroulante de choix pour sélectionner la pièce où la température doit être modifié. 
+- Son menu navigateur vous permet de créer des actions sous formes de textes entièrement configurables sans aucun développement avec la possibilité d'y ajouter des paramètres de saisie. 
+	- Par exemple, vous avez un plugin qui permet de gèrer la température de votre chauffage ? Créez une action de menu associée à ce plugin, ajoutez un slider pour définir la température et une liste déroulante de choix pour sélectionner la pièce où la température doit être modifié. 
 
 <BR> 
 
@@ -41,7 +43,7 @@ La compatibilité avec vos plugins existants est normalement maintenue. Néanmoi
 
 Chaque client Android (un smartphone, une tablette) doit avoir un nom unique et doit être associé à un répertoire de liaison du même nom dans le répertoire `android/clients`.
 
-A l'installation, un répertoire de liaison `android/clients/Android` existe pour un client `Android` déjà configuré dans les paramètres par défaut de l'application installée sur le smartphone.
+A l'installation, un répertoire de liaison `android/clients/Android` existe déjà pour un client `Android` configuré dans les paramètres par défaut de l'application installée sur votre smartphone.
 
 **Pour changer le nom du client par défaut:**
 - Renommez le répertoire `android/clients/Android` par le nom que vous avez donné dans les paramètres de l'application installée sur votre smartphone.
@@ -53,28 +55,29 @@ A l'installation, un répertoire de liaison `android/clients/Android` existe pou
 	- Par exemple, un répertoire de liaison `Salon` pour un client `Salon` existe, copiez alors ce répertoire `android/clients/Salon` en `android/clients/Cuisine` (en supposant que votre nouveau client Android s'appelle `Cuisine`).
 - Ouvrez le fichier `client.ini` dans le répertoire de votre nouveau client et modifiez la propriété `client` par le nom que vous lui avez donné.
 
-**Dans les 2 cas**:
-- Récupérez l'adresse IP et le Port de communication dans les paramètres de l'application sur votre smartphone.
-- Ajoutez-les dans le fichier `client.ini` du répertoire de votre client.
 
-```xml
-"http" : {
-	"remote" : {
-		"ip"    : "192.168.1.9",
-		"port"  : 8765
-	},
-```
+### Configuration sur le smartphone Android
+Depuis la version 0.1.1 du [Client Android pour Avatar ] (https://play.google.com/store/apps/details?id=com.automation.home.avatar.avatarandroidclient), la configuration est **automatique**.
 
-**De préférence:**<BR>
-Si vous avez plusieurs client Android, définissez des ports de communication différents.
+Après avoir démarré le Serveur Avatar et lancé l'application sur votre téléphone:
+- Déplacez-vous dans les paramètres de l'application
+- Cliquez sur le bouton à coté de l'adresse IP du serveur Avatar (pour une 1ère connexion, l'adresse IP est XXX.XXX.XXX.XXX)
+	- L'application:
+		- Recherche le serveur Avatar sur le réseau
+		- Configure automatiquement les paramètres de connexion sur le Serveur:
+			- Le nom du client (Champ "Nom du client" dans les paramètres de l'application)
+			- L'adresse IP du client (Champ "Mon IP adresse" dans les paramètres de l'application)
+			- Le port de communication du client (Champ "Mon IP PORT" dans les paramètres de l'application)
+		- Configure automatiquement le paramètre de connexion sur le client:
+			- L'adresse IP du Serveur
+
+Lorsque vous modifiez le nom du client Android dans les paramètres de l'application sur votre smartphone ou que son adresse IP a changée (adressage DHCP) ou encore si vous changez de serveur Avatar, utilisez ce bouton pour remettre à jour automatiquement les propriétés de l'application dans le serveur Avatar et les paramètres dans l'application Android.
+
+Vous devez aussi définir quelques paramètres supplémentaires sur le smartphone, référez-vous aux paramètres de l'application ou à l'aide en ligne dans la page d'À propos de l'application.
 
 
-### Configuration sur le smartphone
-Vous devez définir quelques paramètres supplémentaires sur le smartphone, référez-vous à l'aide en ligne dans la page d'À propos de l'application.
-
-
-### Configuration du serveur Avatar
-Aucune configuration n'est nécessaire, les clients mobiles sont reconnus automatiquement.<BR>
+### Reconnaissance d'un client Android sur le serveur Avatar
+Aucune configuration n'est nécessaire, les clients Android mobiles sont reconnus automatiquement.<BR>
 Une nouvelle fonction `Avatar.isMobile()` a été ajoutée (Avatar V 0.1.6 et supérieure) afin de savoir si le client est un client Android et pouvoir le gérer dans vos plugins.
 
 ```js
