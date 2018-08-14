@@ -68,8 +68,8 @@ function ttsToWav (tts, callback) {
 	tts = decodeURIComponent(tts);
 	
 	// tts to wav
-	var execpath = webroot + '/../../lib/vbs/ttstowav.vbs';
-
+	var execpath = path.resolve(webroot + '/../../lib/vbs/ttstowav.vbs');
+	
 	child = exec( execpath + ' "'+ tts + '" "' + filepath + '"',
 	  function (err, stdout, stderr) {
 			if (err !== null) {
@@ -92,8 +92,9 @@ function speak_states (filename, callback) {
 	var filepath = path.resolve(dir, fileresult);
 	
 	// Listen for speak
-	var cmd = webroot + '/../../lib/sox/sox -q ' + filename + ' ' + filepath + ' stat -−json';
+	var cmd = path.resolve(webroot + '/../../lib/sox') + '/sox -q ' + filename + ' ' + filepath + ' stat -−json';
 	var stats; 
+	
 	var child = exec(cmd, function (err, stdout, stderr) {
 		if (err) { 
 			error('Sox error:', err.red || 'Unable to start Sox'.red);
@@ -103,9 +104,14 @@ function speak_states (filename, callback) {
 	
 	if (child)
 		child.stdout.on("close", function() {
-			setTimeout(function(){								
+			setTimeout(function(){				
 				try {
-					var json = fs.readFileSync(webroot + '/../../../../state.json','utf8');
+					const prop = fs.readJsonSync(path.resolve(__dirname + '/../../../..') + '/Avatar.prop');
+					var jsonfile = (prop.interface) 
+						? jsonfile = path.resolve(webroot + '/../../../../../..') + '/state.json'
+						: jsonfile = path.resolve(webroot + '/../../../..') + '/state.json';
+					
+					var json = fs.readFileSync(jsonfile,'utf8');
 						stats = JSON.parse(json);
 						callback(stats.Length_seconds);
 				} catch(ex){ 

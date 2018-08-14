@@ -7,7 +7,7 @@ var ROOT   = path.normalize(__dirname);
 var CLIENTS = path.normalize(ROOT+'/clients');
 var Config = [];
 
-require('colors');
+
 
 exports.init = function(){
 	
@@ -15,8 +15,15 @@ exports.init = function(){
 	
 	var appPath = require('path');
 	var express = require('express');
-	fs.ensureDirSync(appPath.resolve(ROOT + '/tts'));
-	app.use(express.static(appPath.resolve('./plugins/android/tts')));
+	var tts = appPath.resolve(ROOT + '/tts');
+	fs.ensureDirSync(tts);
+	
+	const prop = fs.readJsonSync(path.resolve(__dirname + '/../..') + '/Avatar.prop');
+	var staticDir = (prop.interface) 
+		? appPath.resolve(ROOT + '/../../plugins/android/tts') 
+		: appPath.resolve('./plugins/android/tts');
+
+	app.use(express.static(staticDir));
 
 }
 
@@ -62,12 +69,12 @@ exports.action = function(data, callback){
 		},
 		askme: function() {
 			var socketClient = Avatar.Socket.getClientSocket(data.client);
-			if (!socketClient) return error('askme end:', ('Unable to find Android client ' + client).red);
+			if (!socketClient) return error('askme end:', 'Unable to find Android client ' + client);
 			socketClient.emit('answer_askme', data.action.speech);
 		}
 	};
 	
-	info("Android command:", data.action.command.yellow, "From:", data.client.yellow);
+	info("Android command:", data.action.command, "From:", data.client);
 	tblCommand[data.action.command]();
 	
 	return callback();
@@ -102,10 +109,10 @@ var loadClients = function(folder, json){
 				var properties = JSON.parse(load);	
 				
 				if (properties.client.length == 0)
-					error('No client name in android client properties'.red);
+					error('No client name in android client properties');
 				else {
 			
-					info('%s android client master plans ...'.yellow, properties.client);
+					info(properties.client, ' android client master plans ...');
 					json.push(properties);
 					
 					// client js

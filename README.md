@@ -20,7 +20,7 @@ Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar
 ## Compatibilité
 - [X] Avatar Serveur >= 0.1.6
 	- Prendre la dernière version courante
-- [X] OS Android >= 4.1 Jelly Bean (API 16) <= 8.1 Oreo (API 27)
+- [X] OS Android >= 4.1 Jelly Bean (API 16)
 
 **A vérifier:**<BR>
 Si vous utilisez des plugins de mon github, vérifiez que vous avez la dernière version disponible.<BR>
@@ -373,6 +373,8 @@ Vous pouvez retrouver des exemples de gestion des clients (les QUI) dans les plu
 <BR> <BR>
 
 ## Versions
+Version 0.1.1 - 13/01/2018
+- Mise à jour mineure pour la compatibilité avec Avatar 3.0
 
 Version 0.1.0 - 13/01/2018
 - Initial version
