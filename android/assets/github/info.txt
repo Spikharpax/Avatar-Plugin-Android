@@ -9,3 +9,6 @@ La possibilité d'avoir plusieurs serveurs et de changer par un simple clic.
 Entièrement compatible avec tous les plugins, y compris les plugins comprenant des dialogues de questions/réponses.
 Si vous avez un système de son Sonos, le son peut être redirigé vers les Players de vos pièces plutôt que sur l'enceinte du téléphone.
 Un menu navigateur pour exécuter des actions directement sans les vocaliser. Ce menu, très simple, est entièrement configurable sans aucun développement.
+ 
+ 
+ 
