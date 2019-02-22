@@ -373,6 +373,12 @@ Vous pouvez retrouver des exemples de gestion des clients (les QUI) dans les plu
 <BR> <BR>
 
 ## Versions
+Version 0.1.2 - 22/02/2019
+- Mise à jour mineure pour la compatibilité avec Avatar 3.0 Released
+	- Fichier android\clients\Android\client.js
+		- Peut être copié seul dans chaque répertoire de client Android plutôt que de reinstallé le plugin complet.
+
+
 Version 0.1.1 - 13/01/2018
 - Mise à jour mineure pour la compatibilité avec Avatar 3.0
 
