@@ -18,6 +18,20 @@ A l'installation, un répertoire de liaison android/clients/Android existe déj�
 	- Par exemple, un répertoire de liaison Salon pour un client Salon existe, copiez alors ce répertoire android/clients/Salon en android/clients/Cuisine (en supposant que votre nouveau client Android s'appelle Cuisine).
 - Ouvrez le fichier client.ini dans le répertoire de votre nouveau client et modifiez la propriété client par le nom que vous lui avez donné.
 
+
+### Configuration de la voix 
+Cette version intégre la possibilité d'avoir une voix différente pour chaque client android.
+
+La voix par défaut est "_Virginie_".
+
+Pour changer la voix:
+- Modifiez la propriété `voice`-`name` par le nom de la voix à utiliser.
+
+**Important**
+Depuis la version 1.3, les voix 64 bits sont parfaitement reconnues. Il n'est plus nécessaire de modifier la base de registre.
+Si vous avez modifié le registre de votre PC serveur 64 bits A.V.A.T.A.R, supprimez vos modifications de registre, désinstallez la voix puis réinstallez-la.
+
+
 ### Configuration sur le smartphone Android
 
 La configuration est automatique.

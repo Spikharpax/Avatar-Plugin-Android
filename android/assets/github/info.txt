@@ -1,5 +1,8 @@
 Client mobile Android pour Avatar
 
+** Nouvelle version **
+Choisissez maintenant la voix associée à chaque client!
+
 Utilisez vos téléphones ou vos tablettes Android pour communiquer avec le Serveur Avatar depuis n'importe où dans votre maison.
 Vous pouvez aussi l'utiliser comme un clone et passer une règle dans une pièce où se trouve déjà un client fixe Windows.
 

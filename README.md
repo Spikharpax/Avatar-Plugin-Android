@@ -47,7 +47,8 @@ A l'installation, un répertoire de liaison `android/clients/Android` existe dé
 	- Par exemple, un répertoire de liaison `Salon` pour un client `Salon` existe, copiez alors ce répertoire `android/clients/Salon` en `android/clients/Cuisine` (en supposant que votre nouveau client Android s'appelle `Cuisine`).
 - Ouvrez le fichier `client.ini` dans le répertoire de votre nouveau client et modifiez la propriété `client` par le nom que vous lui avez donné.
 
-**Pour changer la voix par défaut:**
+### Configuration de la voix 
+Cette version intégre la possibilité d'avoir une voix différente pour chaque client android.<BR>
 La voix par défaut est "_Virginie_". <BR>
 Pour changer la voix:
 - Ouvrez le fichier `client.ini` dans le répertoire de votre client et modifiez la propriété `voice`-`name` par le nom de la voix à utiliser.
