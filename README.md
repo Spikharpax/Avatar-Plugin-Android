@@ -18,17 +18,9 @@ Comme un client fixe sur un PC Windows, Android Client est un vrai client Avatar
 <BR>
 
 ## Compatibilité
-- [X] Avatar Serveur >= 0.1.6
+- [X] Avatar Serveur >= 3.3
 	- Prendre la dernière version courante
 - [X] OS Android >= 4.1 Jelly Bean (API 16)
-
-**A vérifier:**<BR>
-Si vous utilisez des plugins de mon github, vérifiez que vous avez la dernière version disponible.<BR>
-Plugins mis à jour pour la version courante d'Avatar:
-- SonosPlayer 1.2
-- Freebox 1.2
-
-La compatibilité avec vos plugins existants est normalement maintenue. Néanmoins, dû aux améliorations d'Avatar, il peut arriver que de très légères modifications soient nécessaires. Voir le chapitre [Développement](#d%C3%A9veloppement) pour plus de précisions.
 
 <BR><BR>
 
@@ -54,6 +46,15 @@ A l'installation, un répertoire de liaison `android/clients/Android` existe dé
 - Copiez un répertoire de liaison disponible dans `android/clients/` en le nom que vous avez donné dans les paramètres de l'application installée sur votre smartphone.
 	- Par exemple, un répertoire de liaison `Salon` pour un client `Salon` existe, copiez alors ce répertoire `android/clients/Salon` en `android/clients/Cuisine` (en supposant que votre nouveau client Android s'appelle `Cuisine`).
 - Ouvrez le fichier `client.ini` dans le répertoire de votre nouveau client et modifiez la propriété `client` par le nom que vous lui avez donné.
+
+**Pour changer la voix par défaut:**
+La voix par défaut est "_Virginie_". <BR>
+Pour changer la voix:
+- Ouvrez le fichier `client.ini` dans le répertoire de votre client et modifiez la propriété `voice`-`name` par le nom de la voix à utiliser.
+
+**Important**
+Depuis la version 1.3, les voix 64 bits sont parfaitement reconnues. Il n'est plus nécessaire de modifier la base de registre.
+Si vous avez modifié le registre de votre PC serveur 64 bits A.V.A.T.A.R, supprimez vos modifications de registre, désinstallez la voix puis réinstallez-la.
 
 
 ### Configuration sur le smartphone Android
@@ -373,6 +374,9 @@ Vous pouvez retrouver des exemples de gestion des clients (les QUI) dans les plu
 <BR> <BR>
 
 ## Versions
+Version 1.3 - 02/09/2019
+- Voix configurable pour chaque client android.
+
 Version 0.1.2 - 22/02/2019
 - Mise à jour mineure pour la compatibilité avec Avatar 3.0 Released
 	- Fichier android\clients\Android\client.js
